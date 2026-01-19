@@ -127,7 +127,7 @@ public class Main {
                     System.out.println("Final score: " + (finalScore / (questions_askedA + questions_askedB)) * 100 + "%");
                     repeat = false;
                 }
-            } else if (option == 2) {
+            } else if (option == 2) { //Logged in as admin
                 System.out.println("To log in, enter Admin Password.");
                 sc.nextLine();
                 String password_attempt = sc.nextLine();
@@ -142,7 +142,7 @@ public class Main {
                         System.out.println("Add correct answer (a/b/c/d)");
                         char new_answer = Character.toLowerCase(sc.next().charAt(0));
 
-                        if (bank_option == 'a') {
+                        if (bank_option == 'a') { //Chooses the question bank/answer bank
                             bankA.add(new_question);
                             ansA.add(new_answer);
                         } else if (bank_option == 'b') {
@@ -162,7 +162,7 @@ public class Main {
                             System.out.println("Choose a question to remove, enter index of array list to remove question.");
                             int remove = sc.nextInt();
                             if (remove >= 0 && remove < bankA.size()) {
-                                bankA.remove(remove); //Removes "remove" index of array list
+                                bankA.remove(remove); //Removes "remove"'s index of array list
                                 ansA.remove(remove);
                                 System.out.println("Question removed.");
                             } else { //Requires an accurate/accessible index
@@ -186,7 +186,7 @@ public class Main {
                         System.out.println("Returning to main menu...");
                     }
                 } else {
-                    System.out.println("Invalid password.");
+                    System.out.println("Invalid password."); // Invalid admin password
                 }
             }
         }
